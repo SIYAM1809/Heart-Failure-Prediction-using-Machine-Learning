@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Failure Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Heart Failure Risk Prediction</h1>
+        <form action="{{ url_for('predict') }}" method="post">
+            <div class="form-group">
+                <label>Age:</label>
+                <input type="number" name="age" required min="20" max="100">
+            </div>
+
+            <div class="form-group">
+                <label>Sex:</label>
+                <select name="sex" required>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Chest Pain Type:</label>
+                <select name="chest_pain" required>
+                    <option value="ATA">ATA</option>
+                    <option value="NAP">NAP</option>
+                    <option value="ASY">ASY</option>
+                    <option value="TA">TA</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Resting Blood Pressure:</label>
+                <input type="number" name="resting_bp" required min="80" max="200">
+            </div>
+
+            <div class="form-group">
+                <label>Cholesterol:</label>
+                <input type="number" name="cholesterol" required min="100" max="600">
+            </div>
+
+            <div class="form-group">
+                <label>Fasting Blood Sugar:</label>
+                <select name="fasting_bs" required>
+                    <option value="1">Greater than 120 mg/dl</option>
+                    <option value="0">Less than 120 mg/dl</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Resting ECG:</label>
+                <select name="resting_ecg" required>
+                    <option value="Normal">Normal</option>
+                    <option value="ST">ST</option>
+                    <option value="LVH">LVH</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Maximum Heart Rate:</label>
+                <input type="number" name="max_hr" required min="60" max="202">
+            </div>
+
+            <div class="form-group">
+                <label>Exercise Angina:</label>
+                <select name="exercise_angina" required>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Oldpeak:</label>
+                <input type="number" name="oldpeak" required step="0.1" min="-3" max="7">
+            </div>
+
+            <div class="form-group">
+                <label>ST Slope:</label>
+                <select name="st_slope" required>
+                    <option value="Up">Up</option>
+                    <option value="Flat">Flat</option>
+                    <option value="Down">Down</option>
+                </select>
+            </div>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html> 
