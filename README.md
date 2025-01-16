@@ -11,8 +11,9 @@ This is a web-based application that predicts the risk of heart failure using ma
 - Input validation for all fields
 
 ![Home Page](image.png)
-![Home Page](H2.png)
 ![Home Page](Hp1.png)
+![Home Page](H2.png)
+
 ![Home Page](H3.png)
 ![Home Page](h6.png)
 
