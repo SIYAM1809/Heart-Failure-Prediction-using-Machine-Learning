@@ -10,6 +10,11 @@ This is a web-based application that predicts the risk of heart failure using ma
 - Responsive design
 - Input validation for all fields
 
-## Installation
+![Home Page](H2.png)
+![Home Page](image.png)
+![Home Page](H3.png)
+![Home Page](Hp1.png)
+![Home Page](h6.png)
 
-1. Clone the repository 
+
+   
