@@ -1,17 +1,49 @@
+<!-- result.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Prediction Result</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prediction Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Heart Failure Risk Prediction Result</h1>
-        <div class="result-box">
-            <h2>Prediction: {{ result.prediction }}</h2>
-            <p>Probability: {{ result.probability }}</p>
+  {# Use the container with risk-specific classes based on the prediction #}
+  {% if result.prediction == 'High Risk' %}
+    <div class="container container-risk-high">
+  {% else %}
+    <div class="container container-risk-low">
+  {% endif %}
+      <div class="result-card">
+        <div class="risk-icon">
+          {% if result.prediction == 'High Risk' %}
+            <i class="fas fa-exclamation-triangle fa-3x" style="color: #ff4d4d;"></i>
+          {% else %}
+            <i class="fas fa-check-circle fa-3x" style="color: #4ecca3;"></i>
+          {% endif %}
         </div>
-        <a href="{{ url_for('home') }}" class="back-button">Make Another Prediction</a>
+        <h2>{{ result.prediction }}</h2>
+        <div class="probability">
+          {{ result.probability }}
+        </div>
+        <p style="color: #cccccc; margin-top: 1rem;">
+          {% if result.prediction == 'High Risk' %}
+            Please consult a healthcare professional for further evaluation.
+          {% else %}
+            Maintain a healthy lifestyle and regular checkups.
+          {% endif %}
+        </p>
+      </div>
     </div>
+  
+  <!-- Separate button section -->
+  <div class="button-container">
+    <a href="{{ url_for('home') }}">
+      <button>
+        <i class="fas fa-arrow-left"></i> New Assessment
+      </button>
+    </a>
+  </div>
 </body>
-</html> 
+</html>
