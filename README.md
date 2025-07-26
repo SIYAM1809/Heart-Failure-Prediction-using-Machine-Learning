@@ -1,3 +1,14 @@
+<p align="center">
+  <img src="path/to/your/banner.png" alt="Heart Failure Prediction Banner" width="700"/>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.9-blue.svg" alt="Python">
+  <img src="https://img.shields.io/badge/Framework-Flask-orange.svg" alt="Flask">
+  <img src="https://img.shields.io/badge/Cloud-Heroku-purple.svg" alt="Heroku">
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
+</p>
+
 # Heart Failure Prediction Web Application
 
 This is a web-based application that predicts the risk of heart failure using machine learning. The application uses a Random Forest model trained on medical data to provide risk assessments.
